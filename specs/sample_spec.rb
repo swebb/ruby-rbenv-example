@@ -1,6 +1,10 @@
 require "rspec"
 require "rspec/buildkite/analytics"
-RSpec::Buildkite::Analytics.configure(token: ENV["TEST_ANALYTICS_TOKEN"])
+puts "===="
+puts ENV["TEST_ANALYTICS_TOKEN"]
+puts ENV["TEST_ANALYTICS_TOKEN"].length
+puts "===="
+RSpec::Buildkite::Analytics.configure(token: ENV["TEST_ANALYTICS_TOKEN"], url: "http://analytics-api.buildkite.localhost/v1/uploads")
 
 RSpec.describe "A sample test" do
   it "runs aok" do
