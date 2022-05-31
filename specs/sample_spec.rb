@@ -1,4 +1,6 @@
 require "rspec"
+require "rspec/buildkite/analytics"
+RSpec::Buildkite::Analytics.configure(token: ENV["TEST_ANALYTICS_TOKEN"])
 
 RSpec.describe "A sample test" do
   it "runs aok" do
